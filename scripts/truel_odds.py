@@ -25,6 +25,9 @@ def strategy(a_move):
         add(duel("A", "C", pA, pC), (1-pA) * (1-pB))
     return res
 
+# Branch used in the "intuition trap" shot: Sparrow hits Hawkeye, Rattlesnake shoots next
+print("A hits C, then B shoots first -> A survives", duel("B", "A", pB, pA)["A"], f"= {float(duel('B', 'A', pB, pA)['A']):.1%}")
+
 for m in ["air", "C"]:
     r = strategy(m)
     print(m, {k: f"{v} = {float(v):.1%}" for k, v in r.items()})
